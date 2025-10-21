@@ -60,5 +60,25 @@ Utilitzant l'eina seleccionada a la Fase 1 (Bitwarden, KeePassX, o similar), heu
    - Com fer servir l’extensió del navegador per emplenar automàticament les dades
 
 4. **Gestió de Còpies de Seguretat (Backup)**  
-   - Explicació detallada de com fer una còpia de
+   - Explicació detallada de com fer una còpia de seguretat de l'arxiu de contrasenyes (KDBX en KeePass o Exportació en Bitwarden)  
+   - Recomanació de la millor pràctica per emmagatzemar aquesta còpia de seguretat de forma segura (clau USB xifrada o emmagatzematge xifrat al núvol)
 
+---
+
+## Entrega de la tasca
+
+- Aquesta és una tasca **individual**.  
+- Dins el repositori del **Projecte 3** heu de crear una carpeta anomenada `tasca01`.  
+- Dins d’ella, heu de tenir un arxiu `README.md` amb la descripció de la tasca i enllaços als arxius de l’informe i la guia.  
+- L’informe corresponent a la Fase 1 s’ha de lliurar amb un arxiu anomenat `informe.md`.  
+- La guia d’ús tècnica s’ha de lliurar amb un arxiu anomenat `guia.md`.  
+- Les imatges que inclogui la guia han d’estar dins una carpeta específica (`img`, `pics`, etc.).
+
+---
+
+## Materials i links de suport
+
+- [INCIBE: Gestión de contraseñas seguras](https://www.incibe.es/protege-tu-empresa/gestion-de-contraseñas)  
+- [Pàgina oficial de Bitwarden](https://bitwarden.com/)  
+- [Pàgina oficial de KeePassXC](https://keepassxc.org/)  
+- [INCIBE: Gestores de contraseñas: qué son y cómo pueden mejorar la seguridad de las empresas](https://www.incibe.es/protege-tu-empresa/gestion-de-contraseñas)
