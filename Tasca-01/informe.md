@@ -1,72 +1,84 @@
-**T01: Gestor de contrasenyes**
+# T01: Gestor de Contrasenyes
 
-Alerta\!\! EverPia ha estat atacada per ciberdelinqüents. La consultora on esteu de becaris ha patit una fuita d’informació (data breach) i informació confidencial sobre un projecte que està en fase de desenvolupament està ara en mans de delinqüents que amenacen amb publicar-la si no es paga un rescat.
+**Alerta!!** EverPia ha estat atacada per ciberdelinqüents. La consultora on esteu de becaris ha patit una fuita d’informació (data breach) i informació confidencial sobre un projecte en desenvolupament està ara en mans de delinqüents que amenacen amb publicar-la si no es paga un rescat.  
 
-Òbviament, això ha causat una gran alarma dins la companyia i s’ha creat un comitè de crisi per gestionar la situació. 
+Això ha causat alarma dins la companyia i s’ha creat un **comitè de crisi** per gestionar la situació.  
 
-La investigació interna ha revelat que un dels comptes tècnics va ser compromès a causa de l'ús d'una contrasenya feble o reutilitzada.
+La investigació interna ha revelat que un dels comptes tècnics va ser compromès per **una contrasenya feble o reutilitzada**.
 
 ![imagen](img/image1.png)
 
-Com a resposta a aquesta crisi, la Direcció Tècnica ha emès una directriu: tot el personal tècnic ha de començar a utilitzar un gestor de contrasenyes validat per garantir l'ús de credencials úniques i robustes. Se us encarrega la tasca d'avaluar les opcions i crear la documentació necessària per a la formació del personal.
+Com a resposta, la **Direcció Tècnica** ha emès la directriu que tot el personal tècnic ha de començar a utilitzar un **gestor de contrasenyes validat**. Se us encarrega avaluar les opcions i crear la documentació per a la formació del personal.
 
-**Fase 1: Anàlisi i Justificació (Document d'Informe)**
+---
 
-Les contrasenyes febles o repetides representen un risc crític per a l’empresa, ja que poden ser explotades mitjançant:
+## Fase 1: Anàlisi i Justificació (Document d'Informe)
 
-* **Atacs de diccionari**, on es proven combinacions habituals de paraules o contrasenyes comunes.
+Les contrasenyes febles o repetides representen un **risc crític** per a l’empresa, ja que poden ser explotades mitjançant:
 
-* **Credential stuffing**, que consisteix a provar credencials robades en altres serveis on els usuaris poden haver reutilitzat la mateixa contrasenya.
+- **Atacs de diccionari:** proves de combinacions habituals de paraules o contrasenyes comunes.
+- **Credential stuffing:** utilitzar credencials robades en altres serveis on s’hagi reutilitzat la mateixa contrasenya.
+- **Enginyeria social o phishing:** enganyar els usuaris perquè revelin informació d’accés.
 
-* **Enginyeria social o phishing**, que busca enganyar els usuaris perquè revelin la seva informació d’accés.
+**Efectes potencials:** accés no autoritzat a dades, pèrdua d’informació confidencial i afectació de la reputació de l’empresa.
 
-Els efectes d’un atac d’aquest tipus poden ser molt greus, incloent-hi accés no autoritzat a dades, pèrdua d’informació confidencial i afectació de la reputació de l’empresa.
+Un **gestor de contrasenyes** permet:
 
-Un gestor de contrasenyes és una eina que permet:
+- Generar contrasenyes úniques i robustes per a cada servei.
+- Emmagatzemar-les de forma xifrada i segura, accessible només amb una contrasenya mestra.
+- Facilitar l’autocompletat i sincronització entre dispositius.
 
-* Generar contrasenyes úniques i robustes per a cada servei.  
-    
-* Emmagatzemar-les de forma xifrada i segura, accessible només amb una contrasenya mestra.  
-    
-* Facilitar l’autocompletat de contrasenyes i, en alguns casos, la sincronització entre dispositius.
+**Objectiu de la implantació corporativa:** millorar la seguretat, centralitzar la gestió de credencials i reduir el risc d’incidents.
 
-Per tot això, la Direcció Tècnica ha decidit implantar un gestor de contrasenyes corporatiu. L’objectiu és millorar la seguretat, centralitzar la gestió de credencials i reduir el risc de futurs incidents relacionats amb contrasenyes febles o reutilitzades.
+---
 
-**2\. Comparativa tècnica**
+## 2. Comparativa tècnica
 
-A continuació es compara **Bitwarden (solució online/núvol)** amb **KeePassXC (solució offline/escriptori)** segons diversos criteris:
+| Característica          | Bitwarden (Online / Núvol)                            | KeePassXC (Offline / Escriptori)                              |
+|-------------------------|------------------------------------------------------|---------------------------------------------------------------|
+| Tipus                   | Núvol, sincronització automàtica entre dispositius   | Local, arxiu `.kdbx` que es pot portar en USB o localment    |
+| Xifratge i seguretat    | Xifratge end-to-end AES-256; dades només xifrades al núvol | Xifratge AES-256 local; només l’usuari pot accedir           |
+| Accés multiplataforma    | Web, Windows, macOS, Linux, Android, iOS           | Windows, macOS, Linux; portabilitat via arxiu `.kdbx`        |
+| Sincronització           | Automàtica via núvol                                 | Manual: cal copiar el fitxer `.kdbx` entre dispositius       |
+| Cost / model freemium    | Freemium: bàsic gratuït, opcions premium opcionals  | Totalment gratuït, codi obert                                 |
+| Open Source              | Sí                                                   | Sí                                                             |
+| Facilitat d’ús           | Molt amigable, integració amb navegadors            | Requereix coneixement tècnic, menys integració automàtica    |
 
-| Característica | Bitwarden (Online / Núvol) | KeePassXC (Offline / Escriptori) |
-| :---- | :---- | :---- |
-| Tipus | Núvol, sincronització automàtica entre dispositius | Local, arxiu `.kdbx` que es pot portar en USB o emmagatzemar localment |
-| Xifratge i seguretat | Xifratge end-to-end AES-256; les dades només es desen xifrades al núvol | Xifratge AES-256 local; només l’usuari pot accedir a la base de dades |
-| Accés multiplataforma | Web, Windows, macOS, Linux, Android, iOS | Windows, macOS, Linux; portabilitat via arxiu `.kdbx` |
-| Sincronització | Automàtica via núvol | Manual: cal copiar el fitxer `.kdbx` entre dispositius |
-| Cost / model freemium | Freemium: funcionalitat bàsica gratuïta, opcions premium opcionals | Totalment gratuït, codi obert |
-| Open Source | Sí | Sí |
-| Facilitat d’ús | Molt amigable, integració amb navegadors, fàcil configuració | Requereix més coneixement tècnic, menys integració automàtica amb navegadors |
+---
 
-**3\. Avantatges i inconvenients**
+## 3. Avantatges i Inconvenients
 
-**Bitwarden (núvol / online)**
+### Bitwarden (núvol / online)
 
-**Avantatges**: sincronització automàtica, fàcil d’utilitzar, còpies de seguretat al núvol, integració amb navegadors i mòbils.
+**Avantatges:**
+- Sincronització automàtica entre dispositius.
+- Fàcil d’utilitzar.
+- Còpies de seguretat al núvol.
+- Integració amb navegadors i mòbils.
 
-**Inconvenients**: depèn del proveïdor de núvol, possible risc si el servei online és compromès.
+**Inconvenients:**
+- Depèn del proveïdor del núvol.
+- Possible risc si el servei online és compromès.
 
-**KeePassXC (offline / escriptori)**
+### KeePassXC (offline / escriptori)
 
-* **Avantatges**: control total de les dades, sense dependència del núvol, codi obert, molt segur si es gestiona correctament.
+**Avantatges:**
+- Control total de les dades.
+- Sense dependència del núvol.
+- Codi obert i molt segur si es gestiona correctament.
 
-* **Inconvenients**: sincronització manual, menys còmode per a equips distribuïts, requereix coneixements tècnics.
+**Inconvenients:**
+- Sincronització manual.
+- Menys còmode per a equips distribuïts.
+- Requereix coneixements tècnics.
 
-**4\. Recomanació**
+---
 
-Després de l’anàlisi, recomanem Bitwarden per al personal tècnic de l’empresa, per les següents raons:
+## 4. Recomanació
 
-1. Permet **sincronitzar automàticament** les credencials entre diversos dispositius, la qual cosa facilita el treball de l’equip tècnic.  
-     
-2. La **facilitat d’ús** i la integració amb navegadors i aplicacions fa que sigui més probable que els usuaris adoptin l’eina correctament.  
-     
-3. Ofereix **xifratge end-to-end** i opcions de còpia de seguretat automàtica, assegurant un equilibri entre seguretat i comoditat.  
+Es recomana **Bitwarden** per al personal tècnic de l’empresa, pels següents motius:
+
+- Permet sincronitzar automàticament les credencials entre diversos dispositius, facilitant el treball en equip.
+- La facilitat d’ús i integració amb navegadors i aplicacions augmenta l’adopció de l’eina.
+- Ofereix xifratge end-to-end i còpies de seguretat automàtiques, equilibrant seguretat i comoditat.
 
