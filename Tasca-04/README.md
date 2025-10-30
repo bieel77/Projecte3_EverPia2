@@ -19,6 +19,8 @@ Actualment, cada servei intern (servidor de fitxers, wiki de documentació, etc.
 - **Manca d'Escalabilitat:**  
   A mesura que Innovatech afegeix nous serveis, el problema es fa insostenible.
 
+![imagen](img/fto1.png)
+
 ---
 
 ## Proposta de solució
