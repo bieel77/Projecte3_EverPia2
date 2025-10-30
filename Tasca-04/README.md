@@ -1,6 +1,5 @@
 # Servei de Directori. LDAP
 
----
 
 # Cas pràctic: Implementació d’un servei d’autenticació centralitzada amb OpenLDAP
 
