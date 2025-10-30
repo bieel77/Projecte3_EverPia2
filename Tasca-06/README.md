@@ -8,6 +8,9 @@ El seu equip tècnic creu que la causa principal podria ser una **resolució de 
 
 Se us ha encarregat **realitzar una auditoria teòrica i pràctica del servei DNS** per tal de formar el personal del client i oferir eines de diagnosi ràpides.
 
+|[imagen](img/fto2.png)
+
+
 ---
 
 ## Fase Teòrica: Sessió Formativa
