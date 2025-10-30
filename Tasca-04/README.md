@@ -1,4 +1,4 @@
-## Servei de Directori. LDAP
+# Servei de Directori. LDAP
 
 ---
 
