@@ -36,13 +36,13 @@ I la pàgina de **Contacte**.
 
 ![imagen](img/ft9.png)
 
-Per configurar l’**aparència**, anem a *Aparença* i triem el tema **Twenty Seventeen** i el disseny que més ens agradi.
+Per configurar l’**aparència**, anem a *Aparença* i triem el tema **Twenty Seventeen**.
 
-![imagen](img/ft11.png)
+![imagen](img/ft10.png)
 
 Després d'haver creat les pàgines amb la informació de cadascuna, anem a *Aparença* → *Menús*, perquè surtin a la web.
 
-![imagen](img/ft10.png)
+![imagen](img/ft11.png)
 
 Se’ns obrirà aquesta pàgina.  
 A la part esquerra sortiran totes les pàgines que hagis creat; has de prémer les que vulguis que apareguin i després, al panell de la dreta, posar-les en l’ordre que vulguis que surtin a la web.  
