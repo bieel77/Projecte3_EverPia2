@@ -15,7 +15,7 @@ Exemple pràctic de consulta
 ---
 
 🎥 Enllaç al vídeo
-![Mira el vídeo](https://www.youtube.com/watch?v=DmTHaGFLHeA)
+[![Mira el vídeo](https://img.youtube.com/vi/DmTHaGFLHeA/maxresdefault.jpg)](https://www.youtube.com/watch?v=DmTHaGFLHeA)
 
 ---
 
