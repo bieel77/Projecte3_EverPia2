@@ -103,11 +103,11 @@ Apareixerà un avís indicant que hi ha hagut una reducció, però el «disc» v
 
 Primer, es crea una màquina virtual amb **Zorin OS**.
 
-<img src="img/1.png">
+![img](img/immg1.png)
 
 Amb la màquina apagada, afegim **dos discos de 10 GB** cadascun, que faran la funció d’unitats físiques addicionals del sistema.
 
-<img src="img/2.png">
+![img](img/immg2.png)
 
 Un cop iniciada la màquina, instal·lem l’eina **fdisk** per comprovar que els discos s’han afegit correctament:
 
@@ -123,9 +123,9 @@ sudo fdisk -l
 
 Podem observar que, a més del disc principal (**sda**), apareixen els discos nous (**sdb** i **sdc**).
 
-<img src="img/3.png">
+![img](img/immg3.png)
 
-<img src="img/4.png">
+![img](img/immg4.png)
 
 ---
 
@@ -139,7 +139,7 @@ sudo apt install lvm2
 
 I executem les següents comandes per a crear-los:
 
-<img src="img/5.png">
+![img](img/immg5.png)
 
 ---
 
@@ -149,11 +149,11 @@ Una vegada amb els **volums físics creats**, hem de **crear el grup de volums**
 
 Ho farem amb la següent comanda:
 
-<img src="img/6.png">
+![img](img/immg6.png)
 
 Podem verificar-lo amb:
 
-<img src="img/7.png">
+![img](img/immg7.png)
 
 ---
 
@@ -167,11 +167,11 @@ En aquest cas crearem un **LV** amb **nom lv01** i **mida 200 MiB** i ho farem a
 sudo lvcreate -L 200M -n lv01 volgrup
 ```
 
-<img src="img/8.png">
+![img](img/immg8.png)
 
 I si tornem a fer la comanda **vgdisplay**, podem veure que ja marca l’espai com a utilitzat:
 
-<img src="img/9.png">
+![img](img/immg9.png)
 
 ---
 
@@ -187,7 +187,7 @@ sudo mkdir /mnt/lv01
 
 I després el **formatarem** utilitzant el **sistema d’arxius** **Ext4**:
 
-<img src="img/10.png">
+![img](img/immg10.png)
 
 Per a poder utilitzar el **volum lògic**, cal utilitzar la comanda **mount** per a muntar el volum cap a la **carpeta creada** anteriorment amb la **següent comanda**:
 
@@ -203,7 +203,7 @@ Encara que fer-ho d’aquesta manera és possible, **no és viable**, ja que cal
 
 Per això editarem l’arxiu **/etc/fstab** perquè el **volum lògic** quedi formatat i muntat de manera permanent.
 
-<img src="img/11.png">
+![img](img/immg11.png)
 
 I afegirem la següent línia **/dev/volgrup/lv01 /mnt/lv01 ext4 defaults 0 0**, que té el següent significat:
 
@@ -216,7 +216,7 @@ I afegirem la següent línia **/dev/volgrup/lv01 /mnt/lv01 ext4 defaults 0 0**,
 
 I apliquem els canvis:
 
-<img src="img/12.png">
+![img](img/immg12.png)
 
 ---
 
@@ -230,7 +230,7 @@ Per a fer-ho seguirem els següents passos:
 
 Primer **desmuntarem** el **volum lògic** amb la comanda `umount /mnt/lv01`, per a desmuntar el LV i `lvremove` per a eliminar-lo.
 
-<img src="img/13.png">
+![img](img/immg13.png)
 
 Ara **esborrarem la línia** que vam escriure a **/etc/fstab**, per a evitar que es **munti el volum automàticament**.
 
@@ -242,17 +242,17 @@ sudo vgremove volgrup
 
 I executem la comanda **pvs** per a veure que els volums estan lliures:
 
-<img src="img/14.png">
+![img](img/immg14.png)
 
 ### **7.1. Creem el nou grup de volums per al mirror**
 
 **Creem un grup de volums** amb els dos volums físics:
 
-<img src="img/15.png">
+![img](img/immg15.png)
 
 I ara **crearem** el sistema de **mirall (mirror) simple**:
 
-<img src="img/16.png">
+![img](img/immg16.png)
 
 I podem **observar** com el **volum lògic** està format pels **miralls** i dels **logs** que serveixen per a **mantenir la sincronització**:
 
@@ -260,7 +260,7 @@ I podem **observar** com el **volum lògic** està format pels **miralls** i del
 sudo lvs -a -o +devices | grep mirror
 ```
 
-<img src="img/17.png">
+![img](img/immg17.png)
 
 ### **7.2. Demostració de redundància**
 
@@ -268,13 +268,13 @@ Per a veure que **funciona correctament** **pararem la màquina** i **eliminarem
 
 **Eliminem el segon disc** i **n'afegim un de nou**.
 
-<img src="img/27.png">
+![img](img/immg18.png)
 
-<img src="img/28.png">
+![img](img/immg18.png)
 
 **Iniciem la màquina** i podem veure que **detecta que el disc no està** i **s’encarrega de fer el mirall automàticament**.
 
-<img src="img/29.png">
+![img](img/immg20.png)
 
 ---
 
@@ -282,7 +282,7 @@ Per a veure que **funciona correctament** **pararem la màquina** i **eliminarem
 
 **Eliminarem el volum lògic anterior** i **ara en crearem un de nou** però de **100MiB de mida**:
 
-<img src="img/18.png">
+![img](img/immg21.png)
 
 El formatem i **muntem a /mnt/lv01** amb la següent comanda:
 
@@ -292,7 +292,7 @@ mount /dev/volgrup/lv01 /mnt/lv01
 
 I **creem alguns arxius brossa** a dins amb la comada **fallocate**, que serveix per a **crear arxius d'una mida fixa de manera instantània**:
 
-<img src="img/19.png">
+![img](img/immg22.png)
 
 Ara **crearem la instantània (snapshot)** amb la següent comanda:
 
@@ -323,11 +323,11 @@ I després **muntem la còpia** per a veure el contingut i **podem veure que s�
 mount /dev/volgrup/lv_snapshot /dev/volgrup/lv01
 ```
 
-<img src="img/20.png">
+![img](img/immg23.png)
 
 Per a veure la diferència real amb el **mirror**, **creem un arxiu a dins de lv01** per a veure que **a dins de la snapshot no apareix**.
 
-<img src="img/21.png">
+![img](img/immg24.png)
 
 També, si **volem provar que la snapshot pot recuperar la informació de la lv01**, ho farem amb les següents comandes:
 
@@ -340,7 +340,7 @@ umount /mnt/snapshot
 
 I després ja podem **aplicar-la** i podem veure que **ha desaparegut el file04**, per tant, **s’ha restaurat la snapshot correctament**.  
 
-<img src="img/22.png">
+![img](img/immg25.png)
 
 ---
 
@@ -352,7 +352,7 @@ Primer **desmuntarem el disc** i ho farem amb la **comanda umount.**
 
 Un cop **ja desmuntat**, farem servir la **comanda lvextend** que ens permet **extrendre el volum**:
 
-<img src="img/23.png">
+![img](img/immg26.png)
 
 Un cop amb el **volum ampliat**, el **següent pas** serà **ampliar el sistema de fitxers** i ho farem amb les **següents comandes**:
 
@@ -360,14 +360,14 @@ La **primera comanda** serveix per a **comprovar** que **no hi ha erros**, **aba
 
 **e2fsck \-f /dev/volgrup/lv01**
 
-<img src="img/24.png">
+![img](img/immg27.png)
 
 I un cop **sabem** que està **tot correcte** ja **podem executar la segona comanda** per a **ampliar el volum definitivament**:
 
 **resize2fs /dev/volgrup/lv01**
 
-<img src="img/25.png">
+![img](img/immg28.png)
 
 I finalment **veiem que s’ha ampliat correctament**:
 
-<img src="img/26.png">
+![img](img/immg29.png)
