@@ -1,1 +1,16 @@
-
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	ns1.digicore-24.test. root.digicore-24.test (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+	  	 IN	NS	ns1.digicore-24.test.
+ns1	 	 IN	A	192.168.4.24
+server	 IN	A	192.168.4.24
+dbserver IN	A	192.168.4.124
+data	 IN	CNAME	dbserver.digicore-24.test.
